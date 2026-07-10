@@ -77,7 +77,7 @@ function RegisterPage() {
             {loading ? "Criando..." : "Cadastrar"}
           </button>
           <Link to="/" className="block text-center text-sm text-primary">Já tenho conta</Link>
-          <p className="text-xs text-center text-muted-foreground pt-2">Após o cadastro, deposite R$ 10 (único) para ativar sua conta e liberar as tarefas.</p>
+          <p className="text-xs text-center text-muted-foreground pt-2">Seja muito bem vindo(a).</p>
         </form>
       </div>
     </div>
