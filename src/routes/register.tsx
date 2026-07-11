@@ -6,7 +6,7 @@ import { Smartphone, Lock, User, IdCard, Ticket } from "lucide-react";
 
 export const Route = createFileRoute("/register")({ component: RegisterPage });
 
-function phoneToEmail(digits: string) { return `br${digits}@pixshop.com`; }
+function phoneToEmail(digits: string) { return `br${digits}@pixshop.user`; }
 
 function RegisterPage() {
   const navigate = useNavigate();
