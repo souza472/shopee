@@ -8,7 +8,7 @@ import { ChevronLeft, Check, Copy, QrCode } from "lucide-react";
 export const Route = createFileRoute("/app/deposit")({ component: DepositPage });
 
 const PRESETS = [20, 50, 100, 300, 500, 1000, 3000, 5000, 10000];
-const METHODS = ["Lpay", "Qbpay", "Vdcpay", "Ppaypro", "Bank"];
+const METHODS = ["NuPay", "VeloPay", "LumiPay", "NexaPay", "VittaPay"];
 
 type Pending = { id: string; external_id: string; amount_cents: number; pix_copy_paste: string | null; created_at: string };
 
