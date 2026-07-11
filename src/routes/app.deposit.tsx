@@ -17,7 +17,7 @@ function DepositPage() {
   const createPix = useServerFn(createPixIn);
   const listPending = useServerFn(listMyPendingPix);
   const [amount, setAmount] = useState("");
-  const [method, setMethod] = useState("Lpay");
+  const [method, setMethod] = useState("NuPay");
   const [err, setErr] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [pix, setPix] = useState<{ code: string; qr: string; amount: number } | null>(null);
@@ -36,7 +36,7 @@ function DepositPage() {
     setErr(null); setLoading(true); setPix(null);
     try {
       const n = parseFloat(amount.replace(",", "."));
-      if (!n || n < 1) throw new Error("Valor mínimo R$ 1,00");
+      if (!n || n < 1) throw new Error("Valor mínimo R$ 10,00");
       const res = await createPix({ data: { amountCents: Math.round(n * 100), description: `Depósito ${method}` } });
       const qr = await QRCode.toDataURL(res.pixCopyPaste ?? "", { width: 240, margin: 1 });
       setPix({ code: res.pixCopyPaste ?? "", qr, amount: Math.round(n * 100) });
