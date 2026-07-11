@@ -6,7 +6,7 @@ import { Smartphone, Lock, User, Ticket } from "lucide-react";
 
 export const Route = createFileRoute("/register")({ component: RegisterPage });
 
-function phoneToEmail(digits: string) { return `br${digits}@pixshop.com`; }
+function phoneToEmail(digits: string) { return `br${digits}@pixshop.user`; }
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ function RegisterPage() {
             {loading ? "Criando..." : "Cadastrar"}
           </button>
           <Link to="/" className="block text-center text-sm text-primary">Já tenho conta</Link>
-          <p className="text-xs text-center text-muted-foreground pt-2">Após o cadastro, deposite R$ 10 (único) para ativar sua conta e liberar as tarefas.</p>
+          <p className="text-xs text-center text-muted-foreground pt-2">Após o cadastro, ative sua conta e liberar as tarefas.</p>
         </form>
       </div>
     </div>
