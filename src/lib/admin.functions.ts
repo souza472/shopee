@@ -15,7 +15,9 @@ export const adminLogin = createServerFn({ method: "POST" })
       .select("username, password_hash")
       .eq("username", data.username)
       .maybeSingle();
-    if (error) throw new Error("Falha ao consultar admin");
+   if (error) {
+  throw new Error(JSON.stringify(error));
+}
     if (!admin) return { ok: false as const, error: "Credenciais inválidas" };
     const ok = await bcrypt.compare(data.password, admin.password_hash);
     if (!ok) return { ok: false as const, error: "Credenciais inválidas" };
